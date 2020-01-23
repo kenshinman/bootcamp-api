@@ -4,7 +4,7 @@ const dotenv = require("dotenv");
 const colors = require("colors");
 
 //Load env Vards
-dotenv.config({ path: "./config/config.env" });
+dotenv.config({path: "./config/config.env"});
 
 //Load models
 const Bootcamp = require("./models/Bootcamp");
@@ -31,12 +31,12 @@ const courses = JSON.parse(
 const importData = async () => {
 	try {
 		await Bootcamp.create(bootcamps);
-		// await Course.create(courses);
-    console.log("Data imported".green.inverse);
-    process.exit(1)
+		await Course.create(courses);
+		console.log("Data imported".green.inverse);
+		process.exit(1);
 	} catch (error) {
-    console.error(error);
-    process.exit(1)
+		console.error(error);
+		process.exit(1);
 	}
 };
 
@@ -44,12 +44,12 @@ const importData = async () => {
 const deleteData = async () => {
 	try {
 		await Bootcamp.deleteMany();
-		// await Course.deleteMany();
-    console.log("Data destroyed".red.inverse);
-    process.exit(1)
+		await Course.deleteMany();
+		console.log("Data destroyed".red.inverse);
+		process.exit(1);
 	} catch (error) {
-    console.error(error);
-    process.exit(1)
+		console.error(error);
+		process.exit(1);
 	}
 };
 
