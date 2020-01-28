@@ -5,16 +5,16 @@ const Bootcamp = require("../models/Bootcamp");
 
 //@desc Get all courses
 //@route GET /api/v1/courses
-//@route GET /api/v1/courses/:bootcampId/courses
+//@route GET /api/v1/bootcamps/:bootcampId/courses
 //@access public
 
 exports.getCourses = asyncHandler(async (req, res, next) => {
 	if (req.params.bootcampId) {
-		const courses = Course.find({bootcamp: req.params.bootcampId});
+		const courses = await Course.find({bootcamp: req.params.bootcampId});
 
 		return res.status(200).json({
 			success: true,
-			count: (await courses).length,
+			count: await courses.length,
 			data: courses
 		});
 	} else {
@@ -27,7 +27,7 @@ exports.getCourses = asyncHandler(async (req, res, next) => {
 //@access public
 
 exports.getCourse = asyncHandler(async (req, res, next) => {
-	const course = await (await Course.findById(req.params.id)).populate({
+	const course = await Course.findById(req.params.id).populate({
 		path: "bootcamp",
 		select: "name description"
 	});
