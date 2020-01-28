@@ -1,0 +1,16 @@
+_id,role,name,email,password,createdAt,__v
+ObjectId("5d7a514b5d2c12c7449be046"),publisher,Kevin Smith,kevin@gmail.com,$2a$10$EH0dSI2eso3G2U2L2dnMyOEpitafnUJA14v8Qt9.WcQkaxdGKZmde,""2020-01-28T12:45:42.040Z"",0
+ObjectId("5c8a1d5b0190b214360dc035"),user,Stephanie Hanson,steph@gmail.com,$2a$10$3wWjjYp27Rjc.y7Da0SoIemEw9xwPuTagYRq92I/Xuo1xYi8PQxVu,""2020-01-28T12:45:42.042Z"",0
+ObjectId("5c8a1d5b0190b214360dc032"),publisher,Sasha Ryan,sasha@gmail.com,$2a$10$PREGSCoYNWlNW6xAG.p2hu1DYnW5KohDxc7GvQaa4Dsn0KIvESqDG,""2020-01-28T12:45:42.041Z"",0
+ObjectId("5c8a1d5b0190b214360dc040"),user,Sara Kensing,sara@gmail.com,$2a$10$K3W6.rfjxHYycOoTPAGEw.CFRukYkyglNaurxyjIAzYELL9x13QCO,""2020-01-28T12:45:42.043Z"",0
+ObjectId("5d7a514b5d2c12c7449be042"),user,Admin Account,admin@gmail.com,$2a$10$MRgen7NGMwylRiSvtm56ce.kShjqXM/yzMT6qSEw.26rmUkxgRFge,""2020-01-28T12:45:42.038Z"",0
+ObjectId("5c8a1d5b0190b214360dc037"),user,Maggie Johnson,maggie@gmail.com,$2a$10$lxmonJl5N/Qy1G7GhEIfe.1XyVjVd8e0jX0cOpdzq06u/5ps6EMwe,""2020-01-28T12:45:42.042Z"",0
+ObjectId("5d7a514b5d2c12c7449be043"),publisher,Publisher Account,publisher@gmail.com,$2a$10$hOyH7UJfAwHRrPQUKEhvk.tAorgsIbFSiZ6J8xkhyj5RQpRbCQ43S,""2020-01-28T12:45:42.038Z"",0
+ObjectId("5d7a514b5d2c12c7449be044"),user,User Account,user@gmail.com,$2a$10$OHRdsWk8DXOXyDHpN2nqOu0S9TYGitU0ApLO3GNXOFfar3HDltwu2,""2020-01-28T12:45:42.039Z"",0
+ObjectId("5c8a1d5b0190b214360dc033"),user,Greg Harris,greg@gmail.com,$2a$10$xyJiK6fP93X7KssggG51PuyQ9fIPCk3QTD7/7BEiWBeqYPoBe3qua,""2020-01-28T12:45:42.041Z"",0
+ObjectId("5d7a514b5d2c12c7449be045"),publisher,John Doe,john@gmail.com,$2a$10$Q49/4WrixoLkRtRHoAHREeUltT5DNEAx4L06bXhPTCLCf318F9yOS,""2020-01-28T12:45:42.039Z"",0
+ObjectId("5c8a1d5b0190b214360dc031"),publisher,Mary Williams,mary@gmail.com,$2a$10$jVLIToBmmUXvgyq6RBGvauoQMEWFh5iHj7rpnH1ZQd9o5LLb6PFwG,""2020-01-28T12:45:42.040Z"",0
+ObjectId("5c8a1d5b0190b214360dc038"),user,Barry Dickens,barry@gmail.com,$2a$10$3EM6cxh1P/R0eN9Ei.VVCePCOvYzA39lg0f9Y69KRd..gZ22Bojvi,""2020-01-28T12:45:42.043Z"",0
+ObjectId("5c8a1d5b0190b214360dc034"),user,Derek Glover,derek@gmail.com,$2a$10$brOqP2hBeu/DQePdVH0TqeS/l14Oujl9Ah82Eafef7HUfZQaPYpRe,""2020-01-28T12:45:42.041Z"",0
+ObjectId("5c8a1d5b0190b214360dc036"),user,Jerry Wiliams,jerry@gmail.com,$2a$10$x3m57prqVAsoF7utfrXRrusV1tJbm7/3rZK.6zM52S.TJz1aMATxO,""2020-01-28T12:45:42.042Z"",0
+ObjectId("5c8a1d5b0190b214360dc039"),user,Ryan Bolin,ryan@gmail.com,$2a$10$6wCYQ1Lk/RsbTNllaLOY9uMmpj01UMajO6IyHNvoCJv66FeK4q.2S,""2020-01-28T12:45:42.043Z"",0
