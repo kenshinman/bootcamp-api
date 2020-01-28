@@ -7,6 +7,7 @@ const colors = require("colors");
 const cookieParser = require("cookie-parser");
 const fileupload = require("express-fileupload");
 const errorHandler = require("./middleware/error");
+const mongoSanitize = require("express-mongo-sanitize");
 
 //Route  files
 const auth = require("./routes/auth");
@@ -36,6 +37,9 @@ if (process.env.NODE_ENV === "development") {
 
 //file uploading
 app.use(fileupload());
+
+//sanitize requests
+app.use(mongoSanitize());
 
 //static folder
 app.use(express.static(path.join(__dirname, "public")));
