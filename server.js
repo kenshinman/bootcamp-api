@@ -4,7 +4,10 @@ const morgan = require("morgan");
 const connectDB = require("./config/db");
 const path = require("path");
 const helmet = require("helmet");
+const cors = require("cors");
 const xss = require("xss-clean");
+const hpp = require("hpp");
+const rateLimit = require("express-rate-limit");
 const colors = require("colors");
 const cookieParser = require("cookie-parser");
 const fileupload = require("express-fileupload");
@@ -33,6 +36,9 @@ app.use(express.json());
 //cookie parser
 app.use(cookieParser());
 
+//cors
+app.use(cors());
+
 if (process.env.NODE_ENV === "development") {
 	app.use(morgan("dev"));
 }
@@ -40,12 +46,25 @@ if (process.env.NODE_ENV === "development") {
 //file uploading
 app.use(fileupload());
 
+/**
+ * Security middlewares
+ */
 //sanitize requests
 app.use(mongoSanitize());
 //set secure headers
 app.use(helmet());
 //prevent cross site scripting
 app.use(xss());
+//rate limiter
+const limiter = rateLimit({
+	windowMs: 10 * 60 * 1000,
+	max: 100
+});
+
+app.use(limiter);
+
+//
+app.use(hpp);
 
 //static folder
 app.use(express.static(path.join(__dirname, "public")));
