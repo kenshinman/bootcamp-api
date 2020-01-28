@@ -51,6 +51,7 @@ exports.getCourse = asyncHandler(async (req, res, next) => {
 
 exports.addCourse = asyncHandler(async (req, res, next) => {
 	req.body.bootcamp = req.params.bootcampId;
+	req.body.user = req.user.id;
 
 	const bootcamp = await Bootcamp.findById(req.params.bootcampId);
 
@@ -58,6 +59,16 @@ exports.addCourse = asyncHandler(async (req, res, next) => {
 		return next(
 			new ErrorResponse(`No bootcamp with the id of ${req.params.bootcampId}`),
 			404
+		);
+	}
+
+	//make sure only bootcamp owner can  update  bootcamp
+	if (req.user.id !== bootcamp.user.toString() && req.user.role !== "admin") {
+		return next(
+			new ErrorResponse(
+				`You don not have permission to add a course to this bootcamp`,
+				401
+			)
 		);
 	}
 
@@ -83,6 +94,16 @@ exports.updateCourse = asyncHandler(async (req, res, next) => {
 		);
 	}
 
+	//make sure only bootcamp owner can  update  bootcamp
+	if (req.user.id !== course.user.toString() && req.user.role !== "admin") {
+		return next(
+			new ErrorResponse(
+				`You don not have permission to update this course`,
+				401
+			)
+		);
+	}
+
 	course = await Course.findByIdAndUpdate(course, req.body, {
 		new: true,
 		runValidators: true
@@ -105,6 +126,16 @@ exports.deleteCourse = asyncHandler(async (req, res, next) => {
 		return next(
 			new ErrorResponse(`No course with the id of ${req.params.id}`),
 			404
+		);
+	}
+
+	//make sure only bootcamp owner can  update  bootcamp
+	if (req.user.id !== course.user.toString() && req.user.role !== "admin") {
+		return next(
+			new ErrorResponse(
+				`You don not have permission to update this course`,
+				401
+			)
 		);
 	}
 
